@@ -9,7 +9,7 @@ class ParsingTest {
     Parsing parsing;
     public List<String[]> list = Arrays.asList(new String[]{"id", "name","version"},new String[]{"1", "Мари","11"},new String[]{"2", "Антон","11"});
     public String [][] strings = {{"id","1", "2"},{"name", "Мари","Антон"},{"version", "11","11"}};
-    Map<String, Set> map = new LinkedHashMap<>();
+    public Map<String, Set> map = new LinkedHashMap<>();
     @BeforeEach
     void createParsing(){
         parsing = new Parsing();
@@ -27,18 +27,5 @@ class ParsingTest {
     @Test
     void getArryData() {
     assertArrayEquals(strings,parsing.getArryData());
-    }
-
-    @Test
-    void sorting() {
-        parsing.sorting();
-        for(Map.Entry<String,Set> item: map.entrySet()) {
-            assertEquals(, item.getKey());
-        }
-    }
-
-
-    @Test
-    void getData() {
     }
 }
